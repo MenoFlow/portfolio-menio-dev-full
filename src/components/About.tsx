@@ -2,7 +2,7 @@ import { Code, Briefcase, GraduationCap } from "lucide-react";
 
 const About = () => {
   const skills = [
-    "JavaScript/TypeScript",
+    "JS/TS",
     "React.js",
     "Node.js",
     "Python",
