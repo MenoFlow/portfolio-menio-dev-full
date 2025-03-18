@@ -54,7 +54,7 @@ const projects = [
     },
     tech: ["React", "Tailwind CSS", "Node.js"],
     github: "https://github.com/MenoFlow/cotizadmin",
-    demo: "https://cotizadmin-v-1-0.vercel.app/",
+    demo: "https://cotizadmin-v-2-0.vercel.app/",
     image: "/cotizcap3.png",
   },
   {
