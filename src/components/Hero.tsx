@@ -142,7 +142,7 @@ const Hero = () => {
             
             <motion.a
               href="/myCV.pdf"
-              download
+              download="CV_hermenio.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 text-lg font-medium rounded-full bg-transparent border-2 border-highlight text-highlight hover:bg-highlight/10 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
