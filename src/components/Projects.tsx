@@ -50,7 +50,7 @@ const projects = [
     title: "Cotizadmin",
     description: {
       fr: "Une application de gestion de cotisation \n Username: admin |\n Password: admin",
-      en: "An application of cotisation management"
+      en: "An application of cotisation management \n Username: admin |\n Password: admin"
     },
     tech: ["React", "Tailwind CSS", "Node.js"],
     github: "https://github.com/MenoFlow/cotizadmin",

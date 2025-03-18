@@ -92,8 +92,8 @@ export const translations: Translation = {
     en: "Education"
   },
   educationDescription: {
-    fr: "Master en Informatique\nSpécialisation en Développement Web à l'ENI Fianarantsoa",
-    en: "Master's Degree in Computer Science\nSpecialization in Web Development at ENI Fianarantsoa"
+    fr: "Licence Pro en Informatique\nSpécialisation en Développement Web à l'ENI Fianarantsoa",
+    en: "Licence pro's Degree in Computer Science\nSpecialization in Web Development at ENI Fianarantsoa"
   },
   // Projects
   myProjects: {
