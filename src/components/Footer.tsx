@@ -8,8 +8,8 @@ const Footer = () => {
   
   const socialLinks = [
     { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Facebook, href: "https://facebook.com", label: "Twitter" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: Facebook, href: "https://www.facebook.com/hermenioh.andriantsuh", label: "Twitter" },
+    { icon: Github, href: "https://github.com/MenoFlow", label: "GitHub" },
   ];
 
   return (

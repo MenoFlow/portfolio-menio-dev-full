@@ -21,8 +21,8 @@ const About = () => {
   const skills = [
     { name: "React", icon: <Atom className="w-5 h-5" /> },
     { name: "Node.js", icon: <Server className="w-5 h-5" /> },
-    { name: "Nest", icon: <Layout className="w-5 h-5" /> },
-    { name: "Next", icon: <ArrowRight className="w-5 h-5" /> },
+    // { name: "Nest", icon: <Layout className="w-5 h-5" /> },
+    // { name: "Next", icon: <ArrowRight className="w-5 h-5" /> },
     { name: "TS/JS", icon: <FileCode className="w-5 h-5" /> },
     { name: "Python", icon: <Terminal className="w-5 h-5" /> },
     { name: "Laravel", icon: <Settings className="w-5 h-5" /> },
