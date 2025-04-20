@@ -215,7 +215,7 @@ const Contact = () => {
               <div className="p-4 rounded-full bg-accent mb-4">
                 <Mail className="text-highlight h-6 w-6" />
               </div>
-              <span>menoetmi@gmail.com</span>
+              <span>andriantsoahermenio@gmail.com</span>
             </motion.div>
             
             <motion.div 
