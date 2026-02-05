@@ -1,40 +1,52 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { 
-  Atom, 
-  Server, 
-  FileCode, 
-  Database, 
-  Layout, 
-  ArrowRight, 
+import {
+  Atom,
+  Server,
+  FileCode,
+  Database,
+  Layout,
+  ArrowRight,
   Terminal,
   Settings,
-  Briefcase, 
+  Briefcase,
   GraduationCap,
-  Code
+  Code,
+  Braces,
+  Box,
+  Workflow,
+  Cloud,
+  Smartphone
 } from "lucide-react";
 
 const About = () => {
   const { t, language } = useLanguage();
-  
+
   const skills = [
-    { name: "React", icon: <Atom className="w-5 h-5" /> },
+    { name: "React", icon: <Atom className="w-5 h-5 text-blue-200" /> },
     { name: "Node.js", icon: <Server className="w-5 h-5" /> },
-    // { name: "Nest", icon: <Layout className="w-5 h-5" /> },
-    // { name: "Next", icon: <ArrowRight className="w-5 h-5" /> },
+    { name: "Java", icon: <FileCode className="w-5 h-5 text-blue-500" /> },
+    { name: "Tailwind", icon: <Braces className="h-5 w-5 text-red-500" /> },
     { name: "TS/JS", icon: <FileCode className="w-5 h-5" /> },
-    { name: "Python", icon: <Terminal className="w-5 h-5" /> },
+    { name: "Python", icon: <Terminal className="w-5 h-5 text-orange-500" /> },
     { name: "Laravel", icon: <Settings className="w-5 h-5" /> },
     { name: "MySQL", icon: <Database className="w-5 h-5" /> },
+
+    // Ajouts
+    { name: "Docker", icon: <Box className="w-5 h-5 text-blue-400" /> },
+    { name: "n8n", icon: <Workflow className="w-5 h-5 text-green-500" /> },
+    { name: "VPS", icon: <Cloud className="w-5 h-5 text-gray-500" /> },
+    { name: "React Native", icon: <Smartphone className="w-5 h-5 text-indigo-500" /> },
   ];
+
 
   // Animations
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.1,
       }
     }
@@ -42,8 +54,8 @@ const About = () => {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.5 }
     }
@@ -52,7 +64,7 @@ const About = () => {
   return (
     <section id="about" className="bg-secondary fade-in-section">
       <div className="section-container">
-        <motion.h2 
+        <motion.h2
           className="text-3xl sm:text-4xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,9 +73,9 @@ const About = () => {
         >
           {t("aboutMe")}
         </motion.h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div 
+          <motion.div
             className="glass-card p-6 hover:scale-105 transition-transform duration-300"
             variants={containerVariants}
             initial="hidden"
@@ -81,6 +93,7 @@ const About = () => {
                   className="bg-primary/30 rounded-lg p-4 text-center hover:bg-highlight/20 transition-colors flex flex-col items-center gap-2"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
+
                 >
                   <div className="text-highlight">{skill.icon}</div>
                   <div>{skill.name}</div>
@@ -88,9 +101,9 @@ const About = () => {
               ))}
             </div>
           </motion.div>
-          
+
           <div className="space-y-6">
-            <motion.div 
+            <motion.div
               className="glass-card p-6 hover:scale-105 transition-transform duration-300"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -105,8 +118,8 @@ const About = () => {
                 {t("experienceDescription")}
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="glass-card p-6 hover:scale-105 transition-transform duration-300"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}

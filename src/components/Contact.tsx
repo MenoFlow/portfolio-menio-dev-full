@@ -227,6 +227,8 @@ const Contact = () => {
                 <Phone className="text-highlight h-6 w-6" />
               </div>
               <span>+261 34 21 799 97</span>
+              <span>+261 32 40 799 03</span>
+              <span>(Whatsapp)</span>
             </motion.div>
             
             <motion.div 
@@ -237,7 +239,7 @@ const Contact = () => {
               <div className="p-4 rounded-full bg-accent mb-4">
                 <MapPin className="text-highlight h-6 w-6" />
               </div>
-              <span>Fianarantsoa, Madagascar</span>
+              <span>Madagascar</span>
             </motion.div>
           </div>
         </motion.div>

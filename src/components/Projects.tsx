@@ -46,6 +46,29 @@ const techIcons: {[key: string]: JSX.Element} = {
 
 
 const projects = [
+    {
+  title: "TrackFuel360",
+  description: {
+    fr: "Une application de suivi intelligent de carburant et de détection d'anomalies \n Email: admin@example.com |\n Password: admins",
+    en: "An intelligent fuel tracking and anomaly detection application \n Email: admin@example.com |\n Password: admins"
+  },
+  tech: ["React", "PWA", "Tailwind CSS", "Node.js", "MySQL", "Leaflet"],
+  github: "#",
+  demo: "https://trackfuel360.com/",
+  image: "/trackfuel.png",
+},
+{
+  title: "VinExpert",
+  description: {
+    fr: "Une application web pour la gestion de la production et la vente de vin \n Email: admin@example.com |\n Password: admins",
+    en: "A web application for wine production management and sales \n Email: admin@example.com |\n Password: admins"
+  },
+  tech: ["React", "Tailwind CSS", "Node.js", "MySQL", "Chart.js"],
+  github: "#",
+  demo: "https://vinexpert-management.vercel.app/",
+  image: "/vinexpert.png",
+},
+
   {
     title: "Cotizadmin",
     description: {
@@ -60,8 +83,8 @@ const projects = [
   {
     title: "Librairie",
     description: {
-      fr: "Permet d'exposer les livres à vendre",
-      en: "Able exposition of book to sell"
+      fr: "Ma premiere Application. Permet d'exposer les livres à vendre",
+      en: "My first APP. Able exposition of book to sell"
     },
     tech: ["React", "Bootstrap CSS"],
     github: "https://github.com/MenoFlow/liliv",
@@ -80,6 +103,7 @@ const projects = [
     demo: "#",
     image: "/portfocap1.png",
   },
+
 ];
 
 
@@ -242,18 +266,8 @@ const Projects = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-            >
               <CarouselPrevious className="left-1 sm:left-4 md:-left-2 bg-accent/20 text-white hover:bg-accent/40" />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-            >
               <CarouselNext className="right-1 sm:right-4 md:-right-2 bg-accent/20 text-white hover:bg-accent/40" />
-            </motion.div>
           </Carousel>
         </motion.div>
       </div>

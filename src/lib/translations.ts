@@ -84,17 +84,18 @@ export const translations: Translation = {
     en: "Experience"
   },
   experienceDescription: {
-    fr: "Plus de 2 ans d'expérience en développement web, spécialisé dans la création d'applications modernes et performantes.",
-    en: "Over 2 years of experience in web development, specialized in creating modern and high-performance applications."
+    fr: "Plus de 3 ans d'expérience en développement web, spécialisé dans la création d'applications modernes et performantes.",
+    en: "Over 3 years of experience in web development, specialized in creating modern and high-performance applications."
   },
   education: {
     fr: "Formation",
     en: "Education"
   },
   educationDescription: {
-    fr: "Licence Pro en Informatique\nSpécialisation en Développement Web à l'ENI Fianarantsoa",
-    en: "Licence pro's Degree in Computer Science\nSpecialization in Web Development at ENI Fianarantsoa"
+    fr: "Licence Pro en Informatique\nSpécialisation en Développement Web à l'ENI Fianarantsoa\n\nMaster 1 en Informatique\nSpécialisation en Ingénierie Logicielle et Gestion de Projet",
+    en: "Professional Bachelor's Degree in Computer Science\nSpecialization in Web Development at ENI Fianarantsoa\n\nMaster's Degree - Year 1 in Computer Science\nSpecialization in Software Engineering and Project Management"
   },
+
   // Projects
   myProjects: {
     fr: "Mes Projets",

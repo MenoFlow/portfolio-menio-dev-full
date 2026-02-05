@@ -7,8 +7,8 @@ const Footer = () => {
   const { t } = useLanguage();
   
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Facebook, href: "https://www.facebook.com/hermenioh.andriantsuh", label: "Twitter" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/hermenio-andriantsoa-431793383/", label: "LinkedIn" },
+    { icon: Facebook, href: "https://web.facebook.com/menoh.pozy", label: "Facebook" },
     { icon: Github, href: "https://github.com/MenoFlow", label: "GitHub" },
   ];
 
