@@ -80,17 +80,18 @@ const projects = [
     demo: "https://cotizadmin-v-2-0.vercel.app/",
     image: "/cotizcap3.png",
   },
-  {
-    title: "Librairie",
-    description: {
-      fr: "Ma premiere Application. Permet d'exposer les livres à vendre",
-      en: "My first APP. Able exposition of book to sell"
-    },
-    tech: ["React", "Bootstrap CSS"],
-    github: "https://github.com/MenoFlow/liliv",
-    demo: "https://liliv.vercel.app/",
-    image: "librairy.png",
+{
+  title: "MenoStore",
+  description: {
+    fr: "Une application web permettant de parcourir et télécharger des applications mobiles.",
+    en: "A web application to browse and download mobile apps."
   },
+  tech: ["React", "Tailwind CSS"],
+  github: "https://github.com/MenoFlow/appstoreweb",
+  demo: "https://menostore.vercel.app/",
+  image: "menostore.png",
+},
+
 
   {
     title: "Porfolio",
