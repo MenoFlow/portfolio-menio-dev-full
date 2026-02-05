@@ -147,12 +147,12 @@ const Hero = () => {
   </motion.span>{" "}
 
   {/* Ligne horizontale visible uniquement en mobile */}
-<motion.hr
+{/* <motion.hr
   className="sm:hidden border-t-2 border-gray-600 my-2 w-[50%] mx-auto"
   initial={{ width: 0 }}
   animate={{ width: "50%" }}
   transition={{ duration: 0.8, ease: "easeOut" }}
-/>
+/> */}
 
   {/* Animation du texte qui descend */}
   <motion.span
