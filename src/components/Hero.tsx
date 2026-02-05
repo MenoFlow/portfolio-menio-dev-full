@@ -6,6 +6,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
 
+
 const Hero = () => {
   const { t } = useLanguage();
   const { scrollY } = useScrollAnimation();
@@ -13,122 +14,156 @@ const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const greetingText = "Hello world, It's Hermenio";
 
-  // Calculate opacity based on scroll position for smooth fade effect
   const heroOpacity = Math.max(1 - scrollY / 700, 0);
 
-  // Typewriter effect
+  // Typewriter + timing plus doux
   useEffect(() => {
     if (!showGreeting) return;
 
     let currentIndex = 0;
+    const typeSpeed = 80;   // un peu plus lent → plus premium
+    const pauseAfterTyping = 2800; // plus long avant disparition
+
     const typeInterval = setInterval(() => {
       if (currentIndex < greetingText.length) {
-        setTypedText(greetingText.substring(0, currentIndex + 1));
+        setTypedText((prev) => greetingText.substring(0, currentIndex + 1));
         currentIndex++;
       } else {
         clearInterval(typeInterval);
-        
-        // Set timeout to hide the greeting
+
         setTimeout(() => {
           setShowGreeting(false);
-        }, 2000);
+        }, pauseAfterTyping);
       }
-    }, 100);
+    }, typeSpeed);
 
-    return () => {
-      clearInterval(typeInterval);
-    };
+    return () => clearInterval(typeInterval);
   }, [showGreeting]);
 
-  // Reset greeting after it disappears
+  // Reset plus espacé (optionnel : tu peux même le passer à 7–10s)
   useEffect(() => {
     if (!showGreeting) {
       const timeout = setTimeout(() => {
         setTypedText("");
         setShowGreeting(true);
-      }, 5000);
-      
+      }, 8000); // ← augmenté
+
       return () => clearTimeout(timeout);
     }
   }, [showGreeting]);
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen flex items-center justify-center relative"
       style={{ opacity: heroOpacity }}
     >
       <div className="section-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          className="text-center space-y-6 sm:space-y-8"
+          layout               // ← très utile ici
+          transition={{
+            layout: { duration: 0.7, ease: "easeOut" }
+          }}
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {showGreeting && (
-              <motion.div 
-                className="mb-4 text-center"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
+              <motion.div
+                key="greeting"
+                initial={{ opacity: 0, y: -40, scale: 0.92 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{
+                  opacity: 0,
+                  y: -70,                // un peu plus de mouvement vers le haut
+                  scale: 0.85,           // léger rétrécissement
+                  transition: {
+                    duration: 0.85,      // ← rallongé pour plus de douceur
+                    ease: [0.4, 0, 0.2, 1]   // easeOutQuart – très naturel pour une sortie
+                  }
+                }}
+                transition={{
+                  duration: 0.9,
+                  ease: [0.16, 1, 0.3, 1] // ressort très doux
+                }}
+                className="mb-6 sm:mb-10"
               >
-                <motion.div 
-                  className="inline-flex items-center gap-2 text-xl sm:text-2xl mb-2 text-highlight"
+                <motion.div
+                  className="inline-flex items-center gap-3 text-2xl sm:text-3xl font-light tracking-wide text-highlight/90"
+                  animate={{
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
                 >
-                  <Sparkles className="w-5 h-5" />
-                  <span>{typedText}</span>
-                  <Sparkles className="w-5 h-5" />
+                  <Sparkles className="w-6 h-6" />
+                  <span className="font-mono">{typedText}</span>
+                  <Sparkles className="w-6 h-6" />
                 </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
-          
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
+
+          {/* Le reste du contenu bénéficie maintenant du layout */}
+          <motion.div
+            initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-8 flex justify-center"
-            whileHover={{ scale: 1.05, rotate: 5 }}
+            transition={{
+              delay: showGreeting ? 1.2 : 0.5,
+              duration: 0.9
+            }}
+            className="mb-8 sm:mb-10 flex justify-center"
+            whileHover={{ scale: 1.06, rotate: 4 }}
           >
-            <Avatar className="h-40 w-40 border-4 border-highlight shadow-xl">
+            <Avatar className="h-40 w-40 sm:h-48 sm:w-48 border-4 border-highlight/80 shadow-2xl shadow-highlight/20">
               <AvatarImage src="/Menoh.png" alt="Portrait" />
-              <AvatarFallback className="text-4xl font-bold bg-accent text-white">
+              <AvatarFallback className="text-5xl font-bold bg-accent text-white">
                 ME
               </AvatarFallback>
             </Avatar>
           </motion.div>
 
-          <motion.h1 
-            className="text-4xl sm:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
+          <motion.h1
+            className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight"
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{
+              delay: showGreeting ? 1.5 : 0.7,
+              duration: 1.1,
+              ease: "easeOut"
+            }}
           >
-            <motion.span 
-              className="text-highlight"
-              whileHover={{ scale: 1.05 }}
+            <motion.span
+              className="text-highlight block sm:inline"
+              whileHover={{ scale: 1.04 }}
             >
               {t("webDeveloper")}
             </motion.span>
-            <br />
+            <br className="sm:hidden" />
             {t("creativePassionate")}
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{
+              delay: showGreeting ? 1.7 : 0.9,
+              duration: 0.9
+            }}
           >
             {t("heroDescription")}
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{
+              delay: showGreeting ? 1.9 : 1.1,
+              duration: 0.9
+            }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <motion.a
@@ -139,7 +174,7 @@ const Hero = () => {
             >
               {t("learnMore")}
             </motion.a>
-            
+
             <motion.a
               href="/myCV.pdf"
               download="CV_hermenio.pdf"
@@ -153,20 +188,18 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-      
+
+      {/* Flèche qui descend */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          y: [0, 10, 0],
-        }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: [0, 14, 0] }}
         transition={{
-          opacity: { delay: 1, duration: 1 },
-          y: { duration: 2, repeat: Infinity, repeatType: "loop" }
+          opacity: { delay: 1.8, duration: 1.2 },
+          y: { duration: 2.4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
         }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <ArrowDown className="w-6 h-6 text-highlight" />
+        <ArrowDown className="w-7 h-7 sm:w-8 sm:h-8 text-highlight/80" />
       </motion.div>
     </section>
   );
