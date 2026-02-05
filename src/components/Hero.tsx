@@ -135,16 +135,15 @@ const Hero = () => {
               ease: "easeOut"
             }}
           >
-<motion.span
-  className="text-highlight block sm:inline"
-  whileHover={{ scale: 1.04 }}
->
-  {t("webDeveloper")}
-</motion.span>{" "}
-{t("creativePassionate")}
+            <motion.span
+              className="text-highlight block sm:inline"
+              whileHover={{ scale: 1.04 }}
+            >
+              {t("webDeveloper")}
+            </motion.span>{" "}
 
             <br className="sm:hidden" />
-            
+
             {t("creativePassionate")}
           </motion.h1>
 
