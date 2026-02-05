@@ -55,7 +55,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className={`
+    flex min-h-[100dvh] items-center justify-center relative
+    pt-safe  // ou pt-[env(safe-area-inset-top)] si tu préfères l'écrire toi-même
+  `}
       style={{ opacity: heroOpacity }}
     >
       <div className="section-container">
@@ -122,30 +125,49 @@ const Hero = () => {
               <AvatarFallback className="text-5xl font-bold bg-accent text-white">
                 MENOH
               </AvatarFallback>
+              
             </Avatar>
           </motion.div>
 
-          <motion.h1
-            className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight"
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: showGreeting ? 1.5 : 0.7,
-              duration: 1.1,
-              ease: "easeOut"
-            }}
-          >
-            <motion.span
-              className="text-highlight block sm:inline"
-              whileHover={{ scale: 1.04 }}
-            >
-              {t("webDeveloper")}
-            </motion.span>{" "}
+<motion.h1
+  className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight"
+  initial={{ opacity: 0, y: 35 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    delay: showGreeting ? 1.5 : 0.7,
+    duration: 1.1,
+    ease: "easeOut"
+  }}
+>
+  <motion.span
+    className="text-highlight block sm:inline"
+    whileHover={{ scale: 1.04 }}
+  >
+    {t("webDeveloper")}
+  </motion.span>{" "}
 
-            <br className="sm:hidden" />
+  {/* Ligne horizontale visible uniquement en mobile */}
+<motion.hr
+  className="sm:hidden border-t-2 border-gray-600 my-2 w-[50%] mx-auto"
+  initial={{ width: 0 }}
+  animate={{ width: "50%" }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+/>
 
-            {t("creativePassionate")}
-          </motion.h1>
+  {/* Animation du texte qui descend */}
+  <motion.span
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      delay: showGreeting ? 2 : 1,
+      duration: 1,
+      ease: "easeOut"
+    }}
+  >
+    {t("creativePassionate")}
+  </motion.span>
+</motion.h1>
+
 
           <motion.p
             className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
