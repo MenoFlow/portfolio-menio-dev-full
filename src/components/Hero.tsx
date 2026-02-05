@@ -12,7 +12,7 @@ const Hero = () => {
   const { scrollY } = useScrollAnimation();
   const [showGreeting, setShowGreeting] = useState(true);
   const [typedText, setTypedText] = useState("");
-  const greetingText = "Hello world, It's Hermenio";
+  const greetingText = "It's Hermenio";
 
   const heroOpacity = Math.max(1 - scrollY / 700, 0);
 
@@ -85,7 +85,7 @@ const Hero = () => {
                   duration: 0.9,
                   ease: [0.16, 1, 0.3, 1] // ressort très doux
                 }}
-                className="mb-6 sm:mb-10"
+                className="mb-6 sm:mb-6"
               >
                 <motion.div
                   className="inline-flex items-center gap-3 text-2xl sm:text-3xl font-light tracking-wide text-highlight/90"
@@ -120,7 +120,7 @@ const Hero = () => {
             <Avatar className="h-40 w-40 sm:h-48 sm:w-48 border-4 border-highlight/80 shadow-2xl shadow-highlight/20">
               <AvatarImage src="/Menoh.png" alt="Portrait" />
               <AvatarFallback className="text-5xl font-bold bg-accent text-white">
-                ME
+                MENOH
               </AvatarFallback>
             </Avatar>
           </motion.div>
@@ -135,13 +135,16 @@ const Hero = () => {
               ease: "easeOut"
             }}
           >
-            <motion.span
-              className="text-highlight block sm:inline"
-              whileHover={{ scale: 1.04 }}
-            >
-              {t("webDeveloper")}
-            </motion.span>
+<motion.span
+  className="text-highlight block sm:inline"
+  whileHover={{ scale: 1.04 }}
+>
+  {t("webDeveloper")}
+</motion.span>{" "}
+{t("creativePassionate")}
+
             <br className="sm:hidden" />
+            
             {t("creativePassionate")}
           </motion.h1>
 
