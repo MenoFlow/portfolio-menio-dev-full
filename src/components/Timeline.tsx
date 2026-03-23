@@ -53,7 +53,7 @@ const timelineData = [
     title: {
       en: [
         "Bachelor's Degree - Year 2",
-        "Obtention du DELF B2"
+        "Obtained DELF B2 certificate (upper intermediate level)"
       ],
       fr: [
         "Licence 2",
