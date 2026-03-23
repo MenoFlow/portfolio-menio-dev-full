@@ -77,24 +77,24 @@ const timelineData = [
       en: [
         "Bachelor's Degree - Year 3",
         "Obtention du DALF C1",
-        "Obtention du DALF C2"
+        // "Obtention du DALF C2"
       ],
       fr: [
         "Licence 3",
         "Obtention du DALF C1",
-        "Obtention du DALF C2"
+        // "Obtention du DALF C2"
       ],
     },
     description: {
       en: [
         "Advanced studies in Full Stack Development and Network Infrastructure.",
         "Obtained DALF C1 certificate (advanced level)",
-        "Obtained DALF C2 certificate (mastery level)"
+        // "Obtained DALF C2 certificate (mastery level)"
       ],
       fr: [
         "Études avancées en Développement Full Stack et Infrastructure Réseau.",
         "Obtention du certificat DALF C1",
-        "Obtention du certificat DALF C2"
+        // "Obtention du certificat DALF C2"
       ],
     },
   },
