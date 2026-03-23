@@ -145,14 +145,14 @@ const Hero = () => {
   >
     {t("itStudent")}
   </motion.span>{" "}
-  <motion.span
+  {/* <motion.span
     className="text-highlight block sm:text-5xl"
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ delay: showGreeting ? 1.8 : 0.8, duration: 0.8 }}
   >
     ({t("asrAndGl")})
-  </motion.span>{" "}
+  </motion.span>{" "} */}
 
   {/* Ligne horizontale visible uniquement en mobile */}
 {/* <motion.hr
@@ -172,7 +172,7 @@ const Hero = () => {
       ease: "easeOut"
     }}
   >
-    {t("creativePassionate")}
+    {t("asrAndGl")}
   </motion.span>
 </motion.h1>
 
@@ -207,7 +207,7 @@ const Hero = () => {
               {t("learnMore")}
             </motion.a>
 
-            <motion.a
+            {/* <motion.a
               href="/myCV.pdf"
               download="CV_hermenio.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 text-lg font-medium rounded-full bg-transparent border-2 border-highlight text-highlight hover:bg-highlight/10 transition-all duration-300"
@@ -216,7 +216,7 @@ const Hero = () => {
             >
               <Download className="w-5 h-5" />
               {t("downloadCV")}
-            </motion.a>
+            </motion.a> */}
           </motion.div>
         </motion.div>
       </div>

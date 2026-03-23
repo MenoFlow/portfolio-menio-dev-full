@@ -15,7 +15,7 @@ const Index = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="min-h-screen bg-primary">
+        <div className="min-h-screen bg-primary overflow-x-hidden">
           <Navbar />
           <Hero />
           <About />

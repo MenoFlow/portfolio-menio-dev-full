@@ -24,7 +24,11 @@ import {
   Monitor,
   Search,
   Network,
-  Cpu
+  Cpu,
+  Layers,
+  HardDrive,
+  Activity,
+  Zap,
 } from "lucide-react";
 
 const About = () => {
@@ -53,6 +57,12 @@ const About = () => {
     { name: "Wireshark", icon: <Search className="w-5 h-5 text-blue-300" /> },
     { name: "GNS3", icon: <Network className="w-5 h-5 text-green-400" /> },
     { name: "Linux", icon: <Cpu className="w-5 h-5 text-yellow-400" /> },
+    { name: "VirtualBox", icon: <Layers className="w-5 h-5 text-blue-500" /> },
+    { name: "VMWare", icon: <Layers className="w-5 h-5 text-orange-500" /> },
+    { name: "Mikrotik", icon: <Network className="w-5 h-5 text-red-500" /> },
+    { name: "Snort", icon: <Activity className="w-5 h-5 text-green-500" /> },
+    { name: "Suricata", icon: <Activity className="w-5 h-5 text-blue-400" /> },
+    { name: "ELK", icon: <Search className="w-5 h-5 text-purple-400" /> },
   ];
 
   const skills = activeCategory === 'GL' ? glSkills : asrSkills;
@@ -78,7 +88,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="bg-secondary fade-in-section py-20">
+    <section id="about" className="bg-secondary fade-in-section py-20 overflow-x-hidden">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -128,7 +128,7 @@ const Timeline = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="timeline" className="bg-secondary fade-in-section py-16">
+    <section id="timeline" className="bg-secondary fade-in-section py-16 overflow-x-hidden">
       <div className="section-container">
         <motion.h2
           className="text-3xl sm:text-4xl font-bold mb-12 text-center"

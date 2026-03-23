@@ -55,19 +55,19 @@ export const translations: Translation = {
     en: "Web Developer",
   },
   itStudent: {
-    fr: "Étudiant en Informatique Générale",
-    en: "General Computer Science Student",
+    fr: "Étudiant alternant en Informatique Générale",
+    en: "General Computer Science Alternating Student",
   },
   asrAndGl: {
-    fr: "ASR + Génie Logiciel",
-    en: "ASR + Software Engineering",
+    fr: "ASR + GL",
+    en: "ASR + SE",
   },
   creativePassionate: {
     fr: "Créatif & Passionné",
     en: "Creative & Passionate",
   },
   heroDescription: {
-    fr: "Passionné par l'informatique générale, je combine expertise en administration système (ASR) et développement logiciel (GL) pour créer des solutions robustes et innovantes.",
+    fr: "Passionné par l'informatique en générale, je combine expertise en administration système (ASR) et développement logiciel (GL) pour créer des solutions robustes et innovantes.",
     en: "Passionate about general computer science, I combine expertise in systems administration (ASR) and software development (GL) to create robust and innovative solutions.",
   },
   learnMore: {
