@@ -62,11 +62,11 @@ const timelineData = [
     },
     description: {
       en: [
-        "Second year specializing in Web Development.",
+        "Second year specializing in General Computer Science (Systems & Networks + Web Development).",
         "Obtained DELF B2 certificate (upper intermediate level)"
       ],
       fr: [
-        "Deuxième année avec spécialisation en Développement Web.",
+        "Deuxième année en Informatique Générale (Systèmes & Réseaux + Développement Web).",
         "Obtention du certificat DELF B2"
       ],
     },
@@ -87,12 +87,12 @@ const timelineData = [
     },
     description: {
       en: [
-        "Advanced studies in Full Stack Development.",
+        "Advanced studies in Full Stack Development and Network Infrastructure.",
         "Obtained DALF C1 certificate (advanced level)",
         "Obtained DALF C2 certificate (mastery level)"
       ],
       fr: [
-        "Approfondissement des études en Développement Full Stack.",
+        "Études avancées en Développement Full Stack et Infrastructure Réseau.",
         "Obtention du certificat DALF C1",
         "Obtention du certificat DALF C2"
       ],
@@ -112,11 +112,11 @@ const timelineData = [
     },
     description: {
       en: [
-        "First year of Master's program focusing on advanced software engineering and project management.",
+        "First year of Master's program focusing on Software Engineering and Advanced Systems Administration.",
         "Obtained TEFL certificate (Teaching English as a Foreign Language)"
       ],
       fr: [
-        "Première année de Master axée sur l’ingénierie logicielle avancée et la gestion de projet.",
+        "Première année de Master axée sur le Génie Logiciel et l'Administration Systèmes Avancée.",
         "Obtention du certificat TEFL (Teaching English as a Foreign Language)"
       ],
     },

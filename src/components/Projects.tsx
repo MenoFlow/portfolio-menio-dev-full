@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { 
   Atom, 
   Server, 
@@ -18,8 +18,53 @@ import {
   Layout, 
   ArrowRight, 
   Terminal,
-  Settings
+  Settings,
+  Shield,
+  Network,
+  Phone
 } from "lucide-react";
+
+const asrProjects = [
+  {
+    year: "2025",
+    title: {
+      fr: "Projet Infrastructure Réseau & Cybersécurité (VoIP + Architecture Défensive)",
+      en: "Network Infrastructure & Cybersecurity Project (VoIP + Defensive Architecture)"
+    },
+    location: "ENI Fianarantsoa",
+    description: {
+      fr: "Mise en place de la gestion des crédits téléphoniques, supervision via application web et implémentation de solutions de détection et prévention d’intrusions.",
+      en: "Implementation of telephone credit management, supervision via web application and implementation of intrusion detection and prevention solutions."
+    },
+    icon: <Phone className="w-6 h-6" />
+  },
+  {
+    year: "2024",
+    title: {
+      fr: "Projets Administration Systèmes & Sécurité Réseau",
+      en: "Systems Administration & Network Security Projects"
+    },
+    location: "ENI Fianarantsoa",
+    description: {
+      fr: "Conception d’une infrastructure réseau intégrant un portail captif avec gestion d’accès par vouchers, une administration centralisée des utilisateurs (Active Directory).",
+      en: "Design of a network infrastructure integrating a captive portal with voucher access management, centralized user administration (Active Directory)."
+    },
+    icon: <Network className="w-6 h-6" />
+  },
+  {
+    year: "2023",
+    title: {
+      fr: "Simulation d’attaque DDoS",
+      en: "DDoS Attack Simulation"
+    },
+    location: "ENI Fianarantsoa",
+    description: {
+      fr: "Simulation d’attaque DDoS avec mise en place de mécanismes de détection.",
+      en: "DDoS attack simulation with implementation of detection mechanisms."
+    },
+    icon: <Shield className="w-6 h-6" />
+  }
+];
 
 const techIcons: {[key: string]: JSX.Element} = {
   "React": <Atom className="w-4 h-4" />,
@@ -110,6 +155,7 @@ const projects = [
 
 const Projects = () => {
   const { t, language } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState<'GL' | 'ASR'>('ASR');
   useScrollAnimation(); // For scroll animations
   const carouselApiRef = useRef<any>(null);
   
@@ -149,11 +195,43 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             {t("myProjects")}
           </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+            {t("projectsDescription")}
+          </p>
+
+          <div className="flex justify-center gap-4 mb-8">
+            <button
+              onClick={() => setActiveCategory('ASR')}
+              className={`px-4 sm:px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                activeCategory === 'ASR'
+                  ? "bg-highlight text-primary shadow-glow"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10"
+              }`}
+            >
+              <span className="hidden sm:inline">{t("systemsNetworkAdmin")}</span>
+              <span className="sm:hidden">{t("systemsNetworkAdminShort")}</span>
+            </button>
+            <button
+              onClick={() => setActiveCategory('GL')}
+              className={`px-4 sm:px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                activeCategory === 'GL'
+                  ? "bg-highlight text-primary shadow-glow"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10"
+              }`}
+            >
+              <span className="hidden sm:inline">{t("softwareEngineering")}</span>
+              <span className="sm:hidden">{t("softwareEngineeringShort")}</span>
+            </button>
+
+          </div>
         </motion.div>
+
+        {activeCategory === 'GL' ? (
         
         <motion.div 
           className="relative px-4 sm:px-12"
@@ -271,6 +349,66 @@ const Projects = () => {
               <CarouselNext className="right-1 sm:right-4 md:-right-2 bg-accent/20 text-white hover:bg-accent/40" />
           </Carousel>
         </motion.div>
+        ) : (
+          <div className="max-w-4xl mx-auto px-4">
+            {/* Desktop Timeline (ASR) */}
+            <div className="relative hidden sm:block">
+              <div className="absolute left-[50%] transform -translate-x-1/2 h-full w-0.5 bg-highlight/20" />
+              <div className="space-y-12">
+                {asrProjects.map((project, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={`relative flex items-center justify-between w-full ${
+                      index % 2 === 0 ? "flex-row-reverse" : "flex-row"
+                    }`}
+                  >
+                    <div className="w-[45%]" />
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-primary border-2 border-highlight flex items-center justify-center z-10 shadow-glow">
+                      <div className="text-highlight">
+                        {project.icon}
+                      </div>
+                    </div>
+                    <div className={`w-[45%] glass-card p-6 ${
+                      index % 2 === 0 ? "text-left" : "text-right"
+                    }`}>
+                      <span className="text-highlight font-bold text-lg mb-1 block">{project.year}</span>
+                      <h3 className="text-xl font-bold mb-2 text-white">{project.title[language]}</h3>
+                      <p className="text-highlight/80 text-sm mb-3">{project.location}</p>
+                      <p className="text-gray-300 leading-relaxed">{project.description[language]}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Timeline (ASR) */}
+            <div className="sm:hidden space-y-8 relative">
+              <div className="absolute left-2 top-0 h-full w-0.5 bg-highlight/20" />
+              {asrProjects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative pl-10"
+                >
+                  <div className="absolute left-0 top-0 w-4 h-4 rounded-full bg-highlight shadow-glow mt-1" />
+                  <div className="glass-card p-6">
+                    <span className="text-highlight font-bold text-lg mb-1 block">{project.year}</span>
+                    <h3 className="text-xl font-bold mb-2 text-white">{project.title[language]}</h3>
+                    <p className="text-highlight/80 text-sm mb-3">{project.location}</p>
+                    <p className="text-gray-300 leading-relaxed">{project.description[language]}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

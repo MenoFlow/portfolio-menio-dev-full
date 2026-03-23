@@ -143,7 +143,15 @@ const Hero = () => {
     className="text-highlight block sm:inline"
     whileHover={{ scale: 1.04 }}
   >
-    {t("webDeveloper")}
+    {t("itStudent")}
+  </motion.span>{" "}
+  <motion.span
+    className="text-highlight block sm:text-5xl"
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: showGreeting ? 1.8 : 0.8, duration: 0.8 }}
+  >
+    ({t("asrAndGl")})
   </motion.span>{" "}
 
   {/* Ligne horizontale visible uniquement en mobile */}
