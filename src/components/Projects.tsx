@@ -155,7 +155,7 @@ const projects = [
 
 const Projects = () => {
   const { t, language } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<'GL' | 'ASR'>('ASR');
+  const [activeCategory, setActiveCategory] = useState<'GL' | 'ASR'>('GL');
   useScrollAnimation(); // For scroll animations
   const carouselApiRef = useRef<any>(null);
   
