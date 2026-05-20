@@ -33,7 +33,7 @@ import {
 
 const About = () => {
   const { t, language } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<'GL' | 'ASR'>('ASR');
+  const [activeCategory, setActiveCategory] = useState<'GL' | 'ASR'>('GL');
 
   const glSkills = [
     { name: "React", icon: <Atom className="w-5 h-5 text-blue-200" /> },
