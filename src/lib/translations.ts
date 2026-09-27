@@ -55,12 +55,12 @@ export const translations: Translation = {
     en: "Web Developer",
   },
   itStudent: {
-    fr: "Étudiant alternant en Informatique Générale",
+    fr: "Développeur",
     en: "General Computer Science Alternating Student",
   },
   asrAndGl: {
-    fr: "ASR + GL",
-    en: "ASR + SE",
+    fr: "fullstack",
+    en: "JavaScript",
   },
   creativePassionate: {
     fr: "Créatif & Passionné",
@@ -100,16 +100,16 @@ export const translations: Translation = {
     en: "Experience"
   },
   experienceDescription: {
-    fr: "Plus de 3 ans d'expérience en informatique, alternant entre le développement d'applications web et l'administration d'infrastructures serveurs.",
-    en: "Over 3 years of experience in computer science, alternating between web application development and server infrastructure administration."
+    fr: "Plus de 2 ans d'expérience en informatique, alternant entre le développement d'applications et l'administration d'infrastructures serveurs.",
+    en: "Over 2 years of experience in computer science, alternating between web application development and server infrastructure administration."
   },
   education: {
     fr: "Formation",
     en: "Education"
   },
   educationDescription: {
-    fr: "Licence Pro en Informatique\nSpécialisation en Développement Web à l'ENI Fianarantsoa\n\nMaster 1 en Informatique\nSpécialisation en Ingénierie Logicielle et Gestion de Projet",
-    en: "Professional Bachelor's Degree in Computer Science\nSpecialization in Web Development at ENI Fianarantsoa\n\nMaster's Degree - Year 1 in Computer Science\nSpecialization in Software Engineering and Project Management"
+      fr: "Master en Informatique Générale :\n- Génie Logiciel et base des données\n- Administration de systèmes et réseaux",
+      en: "Master's Degree in General Computer Science:\n- Software Engineering and Databases\n- Systems and Network Administration"
   },
 
   // Projects

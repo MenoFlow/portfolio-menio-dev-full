@@ -45,7 +45,7 @@ const About = () => {
     { name: "Laravel", icon: <Settings className="w-5 h-5" /> },
     { name: "MySQL", icon: <Database className="w-5 h-5" /> },
     { name: "Docker", icon: <Box className="w-5 h-5 text-blue-400" /> },
-    { name: "n8n", icon: <Workflow className="w-5 h-5 text-green-500" /> },
+    { name: "Git", icon: <Workflow className="w-5 h-5 text-green-500" /> },
     { name: "VPS", icon: <Cloud className="w-5 h-5 text-gray-500" /> },
     { name: "React Native", icon: <Smartphone className="w-5 h-5 text-indigo-500" /> },
   ];

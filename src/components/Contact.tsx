@@ -94,8 +94,8 @@ const Contact = () => {
           </motion.p>
           
           <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              {/* <motion.button
+            {/* <DialogTrigger asChild>
+              <motion.button
                 className="px-6 py-3 text-lg font-medium rounded-full bg-highlight text-primary hover:bg-highlight/90 transition-colors"
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
@@ -103,8 +103,8 @@ const Contact = () => {
                 disabled={true}
               >
                 {t("contactMe")}
-              </motion.button> */}
-            </DialogTrigger>
+              </motion.button>
+            </DialogTrigger> */}
             
             <AnimatePresence>
               {open && (
@@ -215,7 +215,12 @@ const Contact = () => {
               <div className="p-4 rounded-full bg-accent mb-4">
                 <Mail className="text-highlight h-6 w-6" />
               </div>
-              <span>andriantsoahermenio@gmail.com</span>
+              <a
+                href="mailto:andriantsoahermenio@gmail.com?subject=Prise%20de%20contact"
+                className="transition-colors hover:text-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+              >
+                andriantsoahermenio@gmail.com
+              </a>
             </motion.div>
             
             <motion.div 

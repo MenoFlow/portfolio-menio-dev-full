@@ -30,7 +30,7 @@ const timelineData = [
     title: {
       en: [
         "Bachelor's Degree - Year 1",
-        "Obtention du DELF B1"
+        "Obtained DELF B1"
       ],
       fr: [
         "Licence 1",
@@ -76,24 +76,24 @@ const timelineData = [
     title: {
       en: [
         "Bachelor's Degree - Year 3",
-        "Obtention du DALF C1",
+        "Obtained DALF C2",
         // "Obtention du DALF C2"
       ],
       fr: [
         "Licence 3",
-        "Obtention du DALF C1",
+        "Obtention du DALF C2",
         // "Obtention du DALF C2"
       ],
     },
     description: {
       en: [
         "Advanced studies in Full Stack Development and Network Infrastructure.",
-        "Obtained DALF C1 certificate (advanced level)",
+        "Obtained DALF C2 certificate (advanced level)",
         // "Obtained DALF C2 certificate (mastery level)"
       ],
       fr: [
         "Études avancées en Développement Full Stack et Infrastructure Réseau.",
-        "Obtention du certificat DALF C1",
+        "Obtention du certificat DALF C2",
         // "Obtention du certificat DALF C2"
       ],
     },
@@ -103,21 +103,21 @@ const timelineData = [
     title: {
       en: [
         "Master 1 - Year 4",
-        "Obtention du certificat d'anglais TEFL"
+        "TEFL (Teaching English as a Foreign Language)"
       ],
       fr: [
         "Master 1",
-        "Obtention du certificat d'anglais TEFL"
+        "TEFL (Teaching English as a Foreign Language)"
       ],
     },
     description: {
       en: [
         "First year of Master's program focusing on Software Engineering and Advanced Systems Administration.",
-        "Obtained TEFL certificate (Teaching English as a Foreign Language)"
+        "Obtained TEFL certificate"
       ],
       fr: [
         "Première année de Master axée sur le Génie Logiciel et l'Administration Systèmes Avancée.",
-        "Obtention du certificat TEFL (Teaching English as a Foreign Language)"
+        "Obtention du certificat TEFL"
       ],
     },
   },

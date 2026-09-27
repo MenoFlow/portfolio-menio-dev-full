@@ -128,8 +128,8 @@ const projects = [
 {
   title: "MenoStore",
   description: {
-    fr: "Une application web permettant de parcourir et télécharger des applications mobiles.",
-    en: "A web application to browse and download mobile apps."
+    fr: "Une application web permettant de parcourir et télécharger mes applications mobiles.",
+    en: "A web application to browse and download my mobile apps."
   },
   tech: ["React", "Tailwind CSS"],
   github: "https://github.com/MenoFlow/appstoreweb",
@@ -282,7 +282,7 @@ const Projects = () => {
                         >
                           <Github className="w-6 h-6" />
                         </motion.a> */}
-                        <motion.a
+                        {/* <motion.a
                           href={project.demo}
                           className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                           target="_blank"
@@ -294,7 +294,7 @@ const Projects = () => {
                           transition={{ delay: 0.2 }}
                         >
                           <ExternalLink className="w-6 h-6" />
-                        </motion.a>
+                        </motion.a> */}
                       </div>
                     </div>
                     
